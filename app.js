@@ -151,7 +151,7 @@ let questions = [
     answer: 1,
   },
   {
-    question: "Is a catch block is required after a try{}?",
+    question: "Is a catch block required after a try{}?",
     choice1: "None is required",
     choice2: "True",
     choice3: "False",
