@@ -3,7 +3,7 @@ const question = document.getElementById("question"); //Gets The HTML Elements W
 const choices = Array.from(document.getElementsByClassName("choice-text")); //Get An Array Of The Classes.
 
 let currentQuestion = []; //Array For The Current Question.
-let acceptingAnswers = true; //Boolean For The Answer Delay.
+let acceptingAnswers = false; //Boolean For The Answer Delay.
 let score = 0; //Scoreboard
 let questionCounter = 0; //Counter For The Questions.
 let availableQuestions = []; //Array for The Available Questions.
@@ -196,13 +196,28 @@ startGame = () => {
   getNewQuestion();
 };
 getNewQuestion = () => {
+  if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS){
+    return window.location.assign("/end.html");
+  }
   questionCounter++;
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
   currentQuestion = availableQuestions[questionIndex];
-  question.innerText = currentQuestion.question;
+  question.innerText = currentQuestion.question; //Writes the question.
   choices.forEach(choice => {
     const number = choice.dataset["number"];
-    choice.innerHTML = currentQuestion["choice" + number];
-  })
+    choice.innerHTML = currentQuestion["choice" + number];//Writes the Choices.
+  });
+  availableQuestions.splice(questionIndex, 1);//Cuts out answered questions.
+  acceptingAnswers = true;
 };
+choices.forEach(choice => {
+  choice.addEventListener("click", e => {
+    if(!acceptingAnswers) return;
+    acceptingAnswers = false;
+    const selectedChoice = e.target;
+    const selectedAnswer = selectedChoice.dataset["number"];
+    console.log(selectedAnswer);
+    getNewQuestion();//Gets new question.
+  });
+});
 startGame();

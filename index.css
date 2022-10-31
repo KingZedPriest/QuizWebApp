@@ -45,12 +45,13 @@ h1{
  /* Utilities */
 .container{
   width: 100vw;
-  height: 75vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 80rem;
   margin: 0 auto;
+  padding: 2rem;
 }
 .container > * {
   width: 100%;
@@ -89,9 +90,9 @@ h1{
 .btn:hover{
   cursor: pointer;
   box-shadow: 0 0.4rem 1.4rem 0 rgba(72, 56, 173, 0.5);
-  transform: translateY(-0.2rem);
+  transform: translateY(-0.3rem);
   transition: transform 150ms;
-  border-radius: 25%;
+  border: white 3px solid;
 }
 .btn[disabled]:hover{
   cursor: not-allowed;

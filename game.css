@@ -11,6 +11,7 @@
   box-shadow: 0 0.4rem 1.4rem 0 rgba(72, 56, 173, 0.5);
   transform: translateY(-0.3rem);
   transition: transform 150ms;
+  border: white 3px solid;
 }
 .choices{
   padding: 1.5rem 2.5rem;
@@ -19,4 +20,5 @@
 }
 .choice-text{
   padding: 1.5rem;
+  width: 100%;
 }
