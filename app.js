@@ -2,6 +2,7 @@
 const question = document.getElementById("question"); //Gets The HTML Elements We Need.
 const choices = Array.from(document.getElementsByClassName("choice-text")); //Get An Array Of The Classes.
 
+//Global Lets
 let currentQuestion = []; //Array For The Current Question.
 let acceptingAnswers = false; //Boolean For The Answer Delay.
 let score = 0; //Scoreboard
@@ -184,40 +185,49 @@ let questions = [
     answer: 3,
   },
 ];
+
 //Needed Constants
 const CORRECT_BONUS = 10; //This is the worth of the Correct Answers if chosen.
-const MAX_QUESTIONS = 3; //The Total number of Questions a user gets.
+const MAX_QUESTIONS = 5; //The Total number of Questions a user gets.
 
 startGame = () => {
   questionCounter = 0;
   score = 0;
   availableQuestions = [...questions];
-  console.log(availableQuestions);
   getNewQuestion();
 };
+
 getNewQuestion = () => {
-  if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS){
+  if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
     return window.location.assign("/end.html");
   }
   questionCounter++;
-  const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+  const questionIndex = Math.floor(Math.random() * availableQuestions.length);//Gets Random Question Index.
   currentQuestion = availableQuestions[questionIndex];
   question.innerText = currentQuestion.question; //Writes the question.
-  choices.forEach(choice => {
+  choices.forEach (choice => {
     const number = choice.dataset["number"];
     choice.innerHTML = currentQuestion["choice" + number];//Writes the Choices.
   });
   availableQuestions.splice(questionIndex, 1);//Cuts out answered questions.
   acceptingAnswers = true;
 };
-choices.forEach(choice => {
+
+choices.forEach (choice => {
   choice.addEventListener("click", e => {
     if(!acceptingAnswers) return;
     acceptingAnswers = false;
-    const selectedChoice = e.target;
-    const selectedAnswer = selectedChoice.dataset["number"];
-    console.log(selectedAnswer);
-    getNewQuestion();//Gets new question.
+    const selectedChoice = e.target; //Gets the whole div.
+    const selectedAnswer = selectedChoice.dataset["number"]; //Gets the number attribute; Data number.
+    const checkAnswer = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect"; //This checks if the answer clicked is true or false.
+    selectedChoice.parentElement.classList.add(checkAnswer); //Adds the class, if correct and incorrect.
+    setTimeout( () => {
+      selectedChoice.parentElement.classList.remove (checkAnswer);//Adds the delay after adding the class before removing it.
+      getNewQuestion();//Gets a new question.
+    }, 1000)   
   });
 });
+
+
 startGame();
+
