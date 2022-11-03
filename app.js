@@ -1,6 +1,9 @@
 // Main Constants
 const question = document.getElementById("question"); //Gets The HTML Elements We Need.
 const choices = Array.from(document.getElementsByClassName("choice-text")); //Get An Array Of The Classes.
+const progressText = document.getElementById("progressText");//Gets the question counter text.
+const scoreText = document.getElementById("score");//Gets the score text.
+const progressBarFull = document.getElementById("progressBarFull")//Gets the progress bar.
 
 //Global Lets
 let currentQuestion = []; //Array For The Current Question.
@@ -202,8 +205,10 @@ getNewQuestion = () => {
     return window.location.assign("/end.html");
   }
   questionCounter++;
+  progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;//This counts and shows the user how many question is remaining, in reference to the Maximum question.
+  progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`;//This updates the progress bar according to the question.
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);//Gets Random Question Index.
-  currentQuestion = availableQuestions[questionIndex];
+  currentQuestion = availableQuestions[questionIndex]; //Gets the Random Question, using the random Question index.
   question.innerText = currentQuestion.question; //Writes the question.
   choices.forEach (choice => {
     const number = choice.dataset["number"];
@@ -220,6 +225,9 @@ choices.forEach (choice => {
     const selectedChoice = e.target; //Gets the whole div.
     const selectedAnswer = selectedChoice.dataset["number"]; //Gets the number attribute; Data number.
     const checkAnswer = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect"; //This checks if the answer clicked is true or false.
+    if(checkAnswer === "correct"){
+      incrementScore(CORRECT_BONUS);//This calls the score increment when the answer is correct.
+    }
     selectedChoice.parentElement.classList.add(checkAnswer); //Adds the class, if correct and incorrect.
     setTimeout( () => {
       selectedChoice.parentElement.classList.remove (checkAnswer);//Adds the delay after adding the class before removing it.
@@ -227,7 +235,10 @@ choices.forEach (choice => {
     }, 1000)   
   });
 });
-
+incrementScore = num =>{
+  score += num;
+  scoreText.innerText = score;//This updates the score.
+}
 
 startGame();
 
