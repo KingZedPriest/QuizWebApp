@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Congratulations</title>
+    <!-- General CSS -->
+    <link rel="stylesheet" href="index.css" />
+     <!-- Favicon -->
+     <link
+     rel="apple-touch-icon"
+     sizes="180x180"
+     href="favicon/apple-touch-icon.png"
+   />
+   <link
+     rel="icon"
+     type="image/png"
+     sizes="32x32"
+     href="favicon/favicon-32x32.png"
+   />
+   <link
+     rel="icon"
+     type="image/png"
+     sizes="16x16"
+     href="favicon/favicon-16x16.png"
+   />
+   <link rel="manifest" href="favicon/site.webmanifest" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="end" class="flex-center flex-column">
+        <h1 id="finalScore"></h1>
+        <form>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="username"
+          />
+          <button
+            type="submit"
+            class="btn"
+            id="saveScoreBtn"
+            onclick="saveHighScore(event)"
+            disabled
+          >Save</button>
+        </form>
+        <a class="btn" href="/game.html">Play Again</a>
+        <a class="btn" href="/">Home</a>
+      </div>
+    </div>
+    <script src="end.js"></script>
+  </body>
+</html>
