@@ -203,7 +203,7 @@ startGame = () => {
 getNewQuestion = () => {
   if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
     localStorage.setItem("mostRecentScore", score); //Saves the high scores to local storage.
-    return window.location.assign("/end.html"); //Brings up the High score/end of the game page.
+    return window.location.assign("end.html"); //Brings up the High score/end of the game page.
   } //The function gets a new Question, and the if statement checks if the Question should end, and the end page coming up. 
   questionCounter++;
   progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;//This counts and shows the user how many question is remaining, in reference to the Maximum question.
