@@ -22,5 +22,5 @@ saveHighScore = (e) => {
   highScores.sort((a,b) => b.sort - a.score)//Sorts the Array in ascending order.
   highScores.splice(5);
   localStorage.setItem("highScores", JSON.stringify(highScores));//Adds the highscores to the local storage, as a string, cause local storage only accepts strings.
-  window.location.assign("/");//Takes us back to home, after the button is clicked.
+  window.location.assign("index.html");//Takes us back to home, after the button is clicked.
 };
