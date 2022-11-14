@@ -12,7 +12,6 @@ username.addEventListener("keyup", () => {
   saveScoreBtn.disabled = !username.value; //This makes the button disabled if there is nothing in the username section or no value.
 });
 saveHighScore = (e) => {
-  console.log("I clicked On The Save Button");
   e.preventDefault(); //Stops the normal default thing a submit button does.
   const score = {
     score: mostRecentScore,
