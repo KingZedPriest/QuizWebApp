@@ -13,7 +13,7 @@ you removing it means you will customise everything to the tiniest of details*/
 }
 
 :root {
-  background-color: #f5f5fb;
+  background-color: #41436a;
   font-size: 71.5%;
   /*The Normal Default font size is 16px. But mine is 14px. Then the 71.5% of it becomes 10 pixels,
   I am not using 62.5% because my browser is 14px by default*/
@@ -26,7 +26,7 @@ h1,h2,h3,h4{
 }
 h1{
   font-size: 5.4rem;
-  color: #5f65ce;
+  color: #fdd037;
   margin-bottom: 5rem;
 }
  h1 > span {
@@ -77,13 +77,14 @@ h1{
 /* Buttons */
 .btn{
   font-size: 1.8rem;
+  font-weight: bolder;
   padding: 1rem 0;
   width: 20rem;
   text-align: center;
-  border: 0.1rem solid #5f65ce;
+  border: 0.1rem solid #fdd037;
   margin-bottom: 1rem;
   text-decoration: none;
-  color: #5f65ce;
+  color: #41436a;
   background-color: white;
   transition: border-radius 1s;
 }
@@ -115,7 +116,7 @@ input{
   border: none;
 }
 input:focus{
-  outline: 0.1rem solid #5f65ce;
+  outline: 0.1rem solid #fdd037;
   box-shadow: 0 0.4rem 1.4rem 0 rgba(72, 56, 173, 0.5);
   transform: translateY(-0.3rem);
   transition: transform 150ms;

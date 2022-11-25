@@ -7,8 +7,8 @@
   align-items: center;
 }
 .loader {
-  --path: #2f3545;
-  --dot: #5f65ce;
+  --path: #fff;
+  --dot: #fdd037;
   --duration: 3s;
   width: 44px;
   height: 44px;
@@ -157,10 +157,11 @@
   display: inline-block;
   margin: 0 16px;
 }
-
- 
 .hidden{
   display: none;
+}
+.hud-prefix, .hud-item, .question{
+  color: white;
 }
 .choice-container{
   display: flex;
@@ -179,12 +180,14 @@
 }
 .choices{
   padding: 1.5rem 2.5rem;
-  background-color: #5f65ce;
-  color: white;
+  background-color: #fdd037;
+  color: black;
+  font-weight: bold;
 }
 .choice-text{
   padding: 1.5rem;
   width: 100%;
+  font-weight: bold;
 }
 .correct {
   background-color: #7DCE13;
@@ -201,6 +204,7 @@
 .hud-prefix{
   text-align: center;
   font-size: 2rem;
+  font-weight: bolder;
 }
 .hud-main-text{
   text-align: center;
@@ -208,14 +212,12 @@
 /* Progress Bar */
 .progressBar{
   width: 20rem;
-  height: 4rem;
-  border: 0.3rem solid #5f65ce;
-  border-radius: 2rem;
+  height: 3rem;
+  border: 0.3rem solid #fdd037;
   margin-top: 2rem;
 }
 .progress-bar-full{
-  height: 4.1rem;
-  background-color: #5f65ce;
+  height: 3rem;
+  background-color: #fdd037;
   width: 0%;
-  border-radius: 1.5rem;
 }

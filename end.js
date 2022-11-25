@@ -2,8 +2,8 @@ const username = document.getElementById("username"); //Gets the form input.
 const saveScoreBtn = document.getElementById("saveScoreBtn");//Gets the Button.
 const finalScore = document.getElementById("finalScore");//Gets the final score.
 const mostRecentScore = localStorage.getItem("mostRecentScore");//Gets the recent scores from the Local storage.
-const highScores = JSON.parse(localStorage.getItem("highscores")) || [];//This gets the high score or an empty array if there is no high score.
-const MAX_HIGH_SCORES = 5;//This is the number of highscores to show.
+const highScores = JSON.parse(localStorage.getItem("highScores")) || [];//This gets the high score or an empty array if there is no high score.
+const MAX_HIGH_SCORES = 5;//This is the number of high Scores to show.
 finalScore.innerText = mostRecentScore; //Shows the final score.
 
 
@@ -18,8 +18,8 @@ saveHighScore = (e) => {
     name: username.value
   };
   highScores.push(score);//Pushes the score into the High scores array.
-  highScores.sort((a,b) => b.sort - a.score)//Sorts the Array in ascending order.
-  highScores.splice(5);
+  highScores.sort((a, b) => b.sort - a.score)//Sorts the Array in ascending order.
+  highScores.splice(MAX_HIGH_SCORES);//Cuts the high scores, when the number is met.
   localStorage.setItem("highScores", JSON.stringify(highScores));//Adds the highscores to the local storage, as a string, cause local storage only accepts strings.
   window.location.assign("index.html");//Takes us back to home, after the button is clicked.
 };

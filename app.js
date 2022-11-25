@@ -7,8 +7,8 @@ const progressBarFull = document.getElementById("progressBarFull"); //Gets the p
 const loader = document.getElementById("loading"); //Gets the Loader.
 const gameStart = document.getElementById("start");
 setTimeout(() => {
-  start.classList.remove("hidden");
   loader.classList.add("hidden");
+  gameStart.classList.remove("hidden");
 }, 3000);//Add the loading display. It basically, doesn't do anything😩
 //Global Lets
 let currentQuestion = []; //Array For The Current Question.
