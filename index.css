@@ -8,7 +8,9 @@ you removing it means you will customise everything to the tiniest of details*/
   color: #333;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -18,32 +20,35 @@ you removing it means you will customise everything to the tiniest of details*/
   /*The Normal Default font size is 16px. But mine is 14px. Then the 71.5% of it becomes 10 pixels,
   I am not using 62.5% because my browser is 14px by default*/
 }
-body{
+body {
   font-size: 1.4rem;
 }
-h1,h2,h3,h4{
+h1,
+h2,
+h3,
+h4 {
   margin-bottom: 1rem;
 }
-h1{
+h1 {
   font-size: 5.4rem;
   color: #fdd037;
   margin-bottom: 5rem;
 }
- h1 > span {
-   font-size: 2.4rem;
-   font-weight: 500;
- }
- h2{
-   font-size: 4.2rem;
-   margin-bottom: 4rem;
-   font-weight: 700;
- }
- h3{
-   font-size: 2.8rem;
-   font-weight: 500;
- }
- /* Utilities */
-.container{
+h1 > span {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+h2 {
+  font-size: 4.2rem;
+  margin-bottom: 4rem;
+  font-weight: 700;
+}
+h3 {
+  font-size: 2.8rem;
+  font-weight: 500;
+}
+/* Utilities */
+.container {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -56,26 +61,26 @@ h1{
 .container > * {
   width: 100%;
 }
-.flex-column{
+.flex-column {
   display: flex;
   flex-direction: column;
 }
-.flex-center{
+.flex-center {
   justify-content: center;
   align-items: center;
 }
-.justify-center{
+.justify-center {
   justify-content: center;
 }
-.text-center{
+.text-center {
   text-align: center;
 }
-.hidden{
+.hidden {
   display: none;
 }
 
 /* Buttons */
-.btn{
+.btn {
   font-size: 1.8rem;
   font-weight: bolder;
   padding: 1rem 0;
@@ -88,34 +93,34 @@ h1{
   background-color: white;
   transition: border-radius 1s;
 }
-.btn:hover{
+.btn:hover {
   cursor: pointer;
   box-shadow: 0 0.4rem 1.4rem 0 rgba(72, 56, 173, 0.5);
   transform: translateY(-0.3rem);
   transition: transform 150ms;
   border: white 3px solid;
 }
-.btn[disabled]:hover{
+.btn[disabled]:hover {
   cursor: not-allowed;
   box-shadow: none;
   transform: none;
 }
 
 /* For The Form */
-form{
+form {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-input{
+input {
   margin-bottom: 1rem;
   width: 18rem;
   padding: 1.5rem;
   font-size: 1.8rem;
   border: none;
 }
-input:focus{
+input:focus {
   outline: 0.1rem solid #fdd037;
   box-shadow: 0 0.4rem 1.4rem 0 rgba(72, 56, 173, 0.5);
   transform: translateY(-0.3rem);

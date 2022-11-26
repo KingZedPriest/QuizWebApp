@@ -31,37 +31,45 @@
   </head>
   <body>
     <div id="loading" class="loading">
-    <div class="loader">
-      <svg viewBox="0 0 80 80">
+      <div class="loader">
+        <svg viewBox="0 0 80 80">
           <circle id="test" cx="40" cy="40" r="32"></circle>
-      </svg>
-  </div>
-  
-  <div class="loader triangle">
-      <svg viewBox="0 0 86 80">
+        </svg>
+      </div>
+
+      <div class="loader triangle">
+        <svg viewBox="0 0 86 80">
           <polygon points="43 8 79 72 7 72"></polygon>
-      </svg>
-  </div>
-  
-  <div class="loader">
-      <svg viewBox="0 0 80 80">
+        </svg>
+      </div>
+
+      <div class="loader">
+        <svg viewBox="0 0 80 80">
           <rect x="8" y="8" width="64" height="64"></rect>
-      </svg>
-  </div>
-</div>
+        </svg>
+      </div>
+    </div>
     <div id="start" class="container hidden">
       <div id="game" class="justify-center flex-column">
         <div class="hud">
           <div id="hud-item">
             <p id="progressText" class="hud-prefix">Question</p>
-            <progress id="progressBar" class="progress" min="0" max="100" value=""></progress>
+            <progress
+              id="progressBar"
+              class="progress"
+              min="0"
+              max="100"
+              value=""
+            ></progress>
           </div>
           <div id="hud-item">
             <p class="hud-prefix">Score</p>
             <h1 class="hud-main-text" id="score">0</h1>
           </div>
         </div>
-        <h2 class="question" id="question">What Is The Answer To This Questions?</h2>
+        <h2 class="question" id="question">
+          What Is The Answer To This Questions?
+        </h2>
         <div class="choice-container">
           <p class="choices">A</p>
           <p class="choice-text" data-number="1">Is This The Answer1?</p>
