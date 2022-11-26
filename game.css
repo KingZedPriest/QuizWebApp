@@ -210,14 +210,8 @@
   text-align: center;
 }
 /* Progress Bar */
-.progressBar{
-  width: 20rem;
-  height: 3rem;
-  border: 0.3rem solid #fdd037;
-  margin-top: 2rem;
-}
-.progress-bar-full{
-  height: 3rem;
-  background-color: #fdd037;
-  width: 0%;
+.progress{
+  font-size: 10rem;
+  accent-color: #fdd037;
+  width: 28rem;
 }

@@ -1,5 +1,5 @@
 #highScoresList{
-    list-style:upper-roman;
+    list-style: none;
     margin-bottom: 4rem;
     padding-left: 0;
 }

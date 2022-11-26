@@ -3,13 +3,13 @@ const question = document.getElementById("question"); //Gets The HTML Elements W
 const choices = Array.from(document.getElementsByClassName("choice-text")); //Get An Array Of The Classes.
 const progressText = document.getElementById("progressText"); //Gets the question counter text.
 const scoreText = document.getElementById("score"); //Gets the score text.
-const progressBarFull = document.getElementById("progressBarFull"); //Gets the progress bar.
+const progressBarFull = document.getElementById("progressBar"); //Gets the progress bar.
 const loader = document.getElementById("loading"); //Gets the Loader.
 const gameStart = document.getElementById("start");
 setTimeout(() => {
   loader.classList.add("hidden");
   gameStart.classList.remove("hidden");
-}, 3000);//Add the loading display. It basically, doesn't do anything😩
+}, 3000); //Add the loading display. It basically, doesn't do anything😩
 //Global Lets
 let currentQuestion = []; //Array For The Current Question.
 let acceptingAnswers = false; //Boolean For The Answer Delay.
@@ -47,7 +47,7 @@ getNewQuestion = () => {
   } //The function gets a new Question, and the if statement checks if the Question should end, and the end page coming up.
   questionCounter++;
   progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`; //This counts and shows the user how many question is remaining, in reference to the Maximum question.
-  progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`; //This updates the progress bar according to the question.
+  progressBarFull.value = `${(questionCounter / MAX_QUESTIONS) * 100}`; //This updates the progress bar according to the question.
   const questionIndex = Math.floor(Math.random() * availableQuestions.length); //Gets Random Question Index.
   currentQuestion = availableQuestions[questionIndex]; //Gets the Random Question, using the random Question index.
   question.innerText = currentQuestion.question; //Writes the question.
