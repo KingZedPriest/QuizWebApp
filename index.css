@@ -21,7 +21,8 @@ you removing it means you will customise everything to the tiniest of details*/
   I am not using 62.5% because my browser is 14px by default*/
 }
 body {
-  font-size: 1.4rem;
+  font-size: 1.4rem; 
+  /* This is 14pixel */
 }
 h1,
 h2,
